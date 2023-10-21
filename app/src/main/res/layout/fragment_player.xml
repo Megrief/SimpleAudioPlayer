@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.PlayerFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/poster_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/placeholder"
+        android:tint="@color/transparent_black"
+        app:layout_constraintDimensionRatio="w, 1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tracks_name"
+        style="@style/FragmentPlayerText.TracksName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Name for song, maybe short maybe long"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/poster_iv" />
+
+    <TextView
+        android:id="@+id/artists_name"
+        style="@style/FragmentPlayerText.ArtistsName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Artist's name"
+        app:layout_constraintTop_toBottomOf="@id/tracks_name"
+        app:layout_constraintStart_toEndOf="@id/poster_iv"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        style="@style/FragmentPlayerButton"
+        android:id="@+id/play_button"
+        android:layout_height="48dp"
+        android:src="@drawable/play"
+        app:layout_constraintTop_toBottomOf="@id/artists_name"
+        app:layout_constraintStart_toEndOf="@id/poster_iv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        style="@style/FragmentPlayerButton"
+        android:id="@+id/pause_button"
+        android:src="@drawable/pause"
+        app:layout_constraintTop_toTopOf="@id/play_button"
+        app:layout_constraintBottom_toBottomOf="@id/play_button"
+        app:layout_constraintStart_toEndOf="@id/play_button" />
+
+    <ImageButton
+        style="@style/FragmentPlayerButton"
+        android:id="@+id/previous_button"
+        android:src="@drawable/previous"
+        app:layout_constraintTop_toTopOf="@id/play_button"
+        app:layout_constraintBottom_toBottomOf="@id/play_button"
+        app:layout_constraintStart_toEndOf="@id/pause_button" />
+
+    <ImageButton
+        style="@style/FragmentPlayerButton"
+        android:id="@+id/next_button"
+        android:src="@drawable/next"
+        app:layout_constraintTop_toTopOf="@id/play_button"
+        app:layout_constraintBottom_toBottomOf="@id/play_button"
+        app:layout_constraintStart_toEndOf="@id/previous_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
